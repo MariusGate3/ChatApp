@@ -74,4 +74,7 @@ void Submit() {
 
 
   print(uname);
+  
+  db.query( "INSERT INTO Users");
+  
 }
