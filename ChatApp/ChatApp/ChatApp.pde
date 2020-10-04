@@ -8,18 +8,16 @@ String Name, Username, Password;
 String text;
 SQLite db;
 ControlP5 cp5;
+int mode = 0;
 
 void setup() {
   size( 500, 500 );
-
 
   // User input
 
   cp5 = new ControlP5(this);
 
-  // Username Input
-  cp5.addBang("Submit").setPosition(250, 150).setSize(100, 50);
-  cp5.addTextfield("a").setPosition(150, 150).setSize(100, 50).setAutoClear(false);
+ 
 
   // Password input
   // cp5.addBang("Submit2").setPosition(250, 250).setSize(100, 50);
@@ -54,4 +52,23 @@ void setup() {
 
 void draw() {
   background(150);
+
+  // Mode Framework
+
+  if (mode == 0) {
+    login();
+  } else if (mode == 1) {
+    signUp();
+  } else if (mode == 2) {
+    messages();
+  }
+}
+
+
+void Submit() {
+  print("User input typed   : ");
+  text=cp5.get(Textfield.class, "Username").getText();
+
+
+  print(text);
 }
