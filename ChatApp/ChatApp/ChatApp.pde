@@ -43,7 +43,7 @@ void setup() {
     }
 
     // read all in table "table_one"
-    db.query( "SELECT * FROM table_one" );
+    db.query( "SELECT * FROM Users" );
 
     while (db.next())
     {
@@ -73,5 +73,8 @@ void Submit() {
   uname=cp5.get(Textfield.class, "Username").getText();
 
 
-  print(text);
+  print(uname);
+  
+  db.query( "INSERT INTO Users");
+  
 }
