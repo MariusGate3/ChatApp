@@ -4,7 +4,7 @@ import de.bezier.data.sql.*;
 
 // initialisering af variabler
 int UserID;
-String Name, Username, Password;
+String Name, uname, Password;
 String text;
 SQLite db;
 ControlP5 cp5;
@@ -17,7 +17,10 @@ void setup() {
 
   cp5 = new ControlP5(this);
 
- 
+  // Username Input
+  cp5.addBang("Submit").setPosition(250, 150).setSize(100, 50);
+  cp5.addTextfield("Username").setPosition(150, 150).setSize(100, 50).setAutoClear(false);
+
 
   // Password input
   // cp5.addBang("Submit2").setPosition(250, 250).setSize(100, 50);
@@ -67,7 +70,7 @@ void draw() {
 
 void Submit() {
   print("User input typed   : ");
-  text=cp5.get(Textfield.class, "Username").getText();
+  uname=cp5.get(Textfield.class, "Username").getText();
 
 
   print(text);
